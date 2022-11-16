@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <!-- header -->
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <a href="/" class="nav-brand text-dark">Todo List Application</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- header ends here -->
+
+    <!-- main site -->
+        <main id="site-main">
+            <div class="container">
+                <div class="box-nav d-flex-justify-between">
+                    <div class="filter">
+                        <a href="/"><i class="fas fa-angle-double-left"></i>Todo List</a>
+                    </div>
+                </div>
+                <div class="form-title text-center">
+                    <h2 class="text-dark">New Todo</h2>
+                    <span class="text-light">Use the below form to create a new Todo</span>
+                </div>
+                <!-- form handling -->
+                <form id="update_todo" method="POST">
+                    <div class="new_todo">
+                        <div class="form-group">
+                            <label for="title" class="text-light">Title</label>
+                            <input type="hidden" name="id" value="">
+                            <input type="text" name="title" value="" placeholder="Todo 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="text-light">Description</label>
+                            <input type="text" name="description" value="" placeholder="This task is to submit week 7 assignment">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn text-dark update">Save</button>
+                        </div>
+                    </div>
+                </form> 
+            </div>
+        </main>
+    <!-- /main site -->
+</body>
+</html>

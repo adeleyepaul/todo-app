@@ -25,7 +25,7 @@ app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 app.get('/', (req,res)=>{
-    res.send("Todo List App")
+    res.render('index')
 })
 
 app.listen(PORT, ()=> {console.log(`Application is running on http:localhost:${PORT}`)})
