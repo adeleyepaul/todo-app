@@ -1,5 +1,16 @@
+const axios = require('axios')
+
 exports.homeRoutes = (req,res)=>{
-    res.render('index')
+    // Make a get request to /api/todo
+    axios.get('http://localhost:4500/api/todo')
+        .then(function(response){
+            console.log(response.data)
+            res.render('index', {lists: response.data})
+        })
+        .catch(err=>{
+            res.send(err)
+        })
+    // res.render('index', {data: "New Data"})
 }
 
 exports.add_todo = (req,res)=>{
