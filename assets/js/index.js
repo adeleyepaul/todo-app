@@ -1,8 +1,8 @@
 
 
 
-$("#add-todo").submit(function(event){
-    alert("Data Insert Successfully")
+$("#add_todo").submit(function(event){
+    alert("Data Inserted Success!")
 })
 
 $("#update_todo").submit(function(event){
