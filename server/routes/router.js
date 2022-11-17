@@ -25,7 +25,7 @@ route.get('/update_todo', services.update_todo)
 // API
 route.post('/api/todo', controller.create)
 route.get('/api/todo', controller.find)
-route.put('/api/todo/:id', controller.create)
-route.delete('/api/todo/:id', controller.create)
+route.put('/api/todo/:id', controller.update)
+route.delete('/api/todo/:id', controller.delete)
 
 module.exports = route
