@@ -17,6 +17,13 @@ exports.add_todo = (req,res)=>{
     res.render('add_todo')
 }
 
-exports.update_todo = (req, res)=>{
-    res.render('update_todo')
+
+exports.update_todo = (req, res) =>{
+    axios.get('http://localhost:4500/api/todo', {params:{id:req.query.id}})
+        .then(function(userdata){
+            res.render('update_todo', {lists:userdata.data})
+        })
+            .catch(err=>{
+                res.send(err)
+            })
 }

@@ -17,11 +17,12 @@ exports.create = (req,res)=>{
     todo
         .save(todo)
         .then(data=>{
-            res.send(data)
+            // res.send(data)
+            res.redirect('/add_todo')
         })
         .catch(err=>{
             res.status(500).send({
-                message:err.message||"some error occured while creating operation"
+                message:err.message||"some error occurred while creating operation"
             })
         })
 }
@@ -35,23 +36,23 @@ exports.find = (req,res)=>{
         Todo1db.findById(id)
             .then(data=>{
                 if(!data){
-                res.status(404).send({message: "not found"})
-            }else{
-                res.send(data)
-            }
-        })
-            .catch(err=>{
-                res.status(500).send({message: err.message || "error retrieving record"})
+                    res.status(404).send({message: "not found"})
+                }else{
+                    res.send(data)
+                }
             })
-    }
-
-    Todo1db.find()
-        .then(list=>{
-            res.send(list)
+            .catch(err=>{
+                res.status(500).send({message:"error retrieving record" + id})
+            })
+    }else{
+        Todo1db.find()
+            .then(list=>{
+                res.send(list)
+            })
+        .catch(err=>{ 
+            res.status(500).send({message:err.message || "Error displaying data"})
         })
-    .catch(err=>{ 
-        res.status(500).send({message:err.message || "Error displaying data"})
-    })
+    }
 }
 
 

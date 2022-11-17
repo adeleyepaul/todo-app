@@ -17,12 +17,27 @@
             <h2 class="text-dark">Update Todo</h2>
             <span class="text-light">Use the below form to update a Todo</span>
         </div>
-        <!-- add new todo -->
-        <%- include('include/_form') %>
+        <!-- form handling -->
+        <form id="update_todo" method="POST">
+            <div class="new_todo">
+                <div class="form-group">
+                    <label for="title" class="text-light">Title</label>
+                    <input type="hidden" name="id" value="<%=lists._id%>">
+                    <input type="text" name="title" value="<%=lists.title%>" placeholder="Todo 1">
+                </div>
+                <div class="form-group">
+                    <label for="description" class="text-light">Description</label>
+                    <input type="text" name="description" value="<%=lists.description%>" placeholder="This task is to submit week 7 assignment">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn text-dark update">Save</button>
+                </div>
+            </div>
+        </form> 
     </div>
 </main>
 <!-- /main site -->
 
 <!-- include footer -->
 <%- include('include/_footer') %>
-<!-- /icnlude footer -->
+<!-- /include footer -->

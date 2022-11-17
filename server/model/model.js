@@ -2,12 +2,10 @@ const mongoose = require('mongoose')
 
 var schema = new mongoose.Schema({
     title: {
-        type: String,
-        required: true
+        type: String
     },
     description: {
-        type: String,
-        required: true
+        type: String
     },
     time : { type : Date, default: Date.now }
 })
